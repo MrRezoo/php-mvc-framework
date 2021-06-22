@@ -1,0 +1,16 @@
+{
+  "name": "mr.rezoo/phpmvc-framework",
+  "autoload": {
+    "psr-4": {
+      "app\\": "./",
+
+    }
+  },
+  "authors": [
+    {
+      "name": "Mr.Rezoo",
+      "email": "rezam578@gmail.com"
+    }
+  ],
+  "require": {}
+}
