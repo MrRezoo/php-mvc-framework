@@ -33,7 +33,7 @@
 
 
 
-<div class="bg-light p-5 rounded-lg m-3">
+<div class="bg-light p-5 rounded-lg m-5  ">
     {{content}}
 </div>
 
