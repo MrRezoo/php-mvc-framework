@@ -94,8 +94,5 @@ class Router
         return ob_get_clean(); // clear the buffer
     }
 
-    //        echo '<pre>';
-    //        var_dump($params);
-    //        echo '<pre>';
-    //        exit;
+
 }

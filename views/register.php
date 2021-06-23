@@ -4,13 +4,13 @@
     <div class="row">
         <div class="col">
             <div class="form-group">
-                <label for="first_name">Firstname</label>
+                <label for="first_name">First name</label>
                 <input id="first_name" type="text" name="first_name" class="form-control">
             </div>
         </div>
         <div class="col">
             <div class="form-group">
-                <label for="last_name">Lastname</label>
+                <label for="last_name">Last name</label>
                 <input id="last_name" type="text" name="last_name" class="form-control">
             </div>
         </div>
