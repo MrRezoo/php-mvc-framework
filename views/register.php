@@ -1,36 +1,23 @@
 <h1>Register Form</h1>
 <hr>
-<form action="" method="post">
+
+<?php use app\core\form\Form;
+
+$form = Form::begin('', "post") ?>
+
     <div class="row">
         <div class="col">
-            <div class="form-group">
-                <label for="first_name">First name</label>
-                <input id="first_name" type="text" name="first_name" class="form-control">
-            </div>
+            <?php echo $form->field($model,'first_name')?>
         </div>
         <div class="col">
-            <div class="form-group">
-                <label for="last_name">Last name</label>
-                <input id="last_name" type="text" name="last_name" class="form-control">
-            </div>
+            <?php echo $form->field($model,'last_name')?>
         </div>
     </div>
 
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" class="form-control">
-    </div>
-
-    <div class="form-group">
-        <label for="password">Password</label>
-        <input id="password" name="password" type="password" class="form-control">
-    </div>
-
-    <div class="form-group">
-        <label for="confirm_password">Confirm Password</label>
-        <input id="confirm_password" name="confirm_password" type="password" class="form-control">
-    </div>
-
+    <?php echo $form->field($model,'email') ?>
+    <?php echo $form->field($model,'password')->passwordField() ?>
+    <?php echo $form->field($model,'confirm_password')->passwordField() ?>
 
     <button type="submit" class="btn btn-primary">Sign up</button>
-</form>
+
+<?php echo Form::end() ?>

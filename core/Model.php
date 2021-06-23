@@ -30,30 +30,28 @@ abstract class Model
     {
         foreach ($this->rules() as $attribute => $rules) {
             $value = $this->{$attribute};
-
             foreach ($rules as $rule) {
-                $rule_name = $rule;
-                if (!is_string($rule_name)) {
-                    $rule_name = $rule[0];
+                $ruleName = $rule;
+                if (!is_string($rule)) {
+                    $ruleName = $rule[0];
                 }
-                if ($rule_name === self::RULE_REQUIRED && !$value) {
+                if ($ruleName === self::RULE_REQUIRED && !$value) {
                     $this->addError($attribute, self::RULE_REQUIRED);
                 }
-                if ($rule_name === self::RULE_EMAIL && !filter_var($value, FILTER_VALIDATE_EMAIL)) {
+                if ($ruleName === self::RULE_EMAIL && !filter_var($value, FILTER_VALIDATE_EMAIL)) {
                     $this->addError($attribute, self::RULE_EMAIL);
                 }
-                if ($rule_name === self::RULE_MIN && strlen($value) < $rule['min']) {
-                    $this->addError($attribute, self::RULE_MIN, $rule);
+                if ($ruleName === self::RULE_MIN && strlen($value) < $rule['min']) {
+                    $this->addError($attribute, self::RULE_MIN, ['min' => $rule['min']]);
                 }
-                if ($rule_name === self::RULE_MAX && strlen($value) > $rule['max']) {
-                    $this->addError($attribute, self::RULE_MAX, $rule);
+                if ($ruleName === self::RULE_MAX && strlen($value) > $rule['max']) {
+                    $this->addError($attribute, self::RULE_MAX);
                 }
-                if ($rule_name === self::RULE_MATCH && $value !==$this->{$rule['match']}) {
-                    $this->addError($attribute, self::RULE_MATCH, $rule);
+                if ($ruleName === self::RULE_MATCH && $value !== $this->{$rule['match']}) {
+                    $this->addError($attribute, self::RULE_MATCH, ['match' => $rule['match']]);
                 }
             }
         }
-
         return empty($this->errors);
     }
 
@@ -78,6 +76,18 @@ abstract class Model
             self::RULE_MATCH => 'This field must be same as {match}',
 
         ];
+    }
+
+
+    public function hasError($attribute)
+    {
+        return $this->errors[$attribute] ?? false;
+    }
+
+    public function getFirstError($attribute)
+    {
+        return $this->errors[$attribute][0] ?? false;
+
     }
 
 
