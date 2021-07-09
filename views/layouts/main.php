@@ -1,3 +1,9 @@
+<?php
+
+use app\core\Application;
+
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,19 +20,19 @@
 <style>
     body {
         background-color: #dddddd;
-        font-size: larger;
-        font-family: "X Yekan", sans-serif
+        /*font-size: larger;*/
+        /*font-family: "X Yekan", sans-serif*/
     }
 
     input {
         color: #038fff;
-        font-size: larger;
-        font-family: "X Yekan", sans-serif
+        /*font-size: larger;*/
+        /*font-family: "X Yekan", sans-serif*/
     }
 
     label {
-        font-size: larger;
-        font-family: "X Yekan", sans-serif
+        /*font-size: larger;*/
+        /*font-family: "X Yekan", sans-serif*/
     }
 </style>
 <body>
@@ -47,6 +53,7 @@
                 <a class="nav-link" href="/contact">Contact</a>
             </li>
         </ul>
+        <?php if(Application::isGuest()): ?>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
                 <a class="nav-link" href="/login">Login <span class="sr-only">(current)</span></a>
@@ -55,11 +62,25 @@
                 <a class="nav-link" href="/register">Register</a>
             </li>
         </ul>
+        <?php else:?>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/logout">Welcome <?php echo Application::$app->user->getDisplayName(); ?>
+                    (Logout)
+                </a>
+            </li>
+        </ul>
+        <?php endif;?>
     </div>
 </nav>
 
 
 <div class="bg-light p-5 rounded-lg m-3">
+    <?php if (Application::$app->session->getFlash('success')): ?>
+        <div class="alert alert-success">
+            <?php echo Application::$app->session->getFlash('success'); ?>
+        </div>
+    <?php endif; ?>
     {{content}}
 </div>
 

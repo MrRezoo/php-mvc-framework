@@ -1,9 +1,13 @@
+<?php
+/**  @var $model \app\models\User */
+?>
+
 <h1>Register Form</h1>
 <hr>
 
-<?php use app\core\form\Form;
+<?php
 
-$form = Form::begin('', "post") ?>
+$form = \app\core\form\Form::begin('', "post") ?>
 
     <div class="row">
         <div class="col">
@@ -20,4 +24,4 @@ $form = Form::begin('', "post") ?>
 
     <button type="submit" class="btn btn-primary">Sign up</button>
 
-<?php echo Form::end() ?>
+<?php \app\core\form\Form::end() ?>
