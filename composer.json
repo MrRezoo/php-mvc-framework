@@ -2,8 +2,7 @@
   "name": "mr.rezoo/phpmvc-framework",
   "autoload": {
     "psr-4": {
-      "app\\": "./",
-
+      "app\\": "./"
     }
   },
   "authors": [
@@ -12,5 +11,8 @@
       "email": "rezam578@gmail.com"
     }
   ],
-  "require": {}
+  "require": {
+    "vlucas/phpdotenv": "^5.3",
+    "ext-pdo": "*"
+  }
 }
