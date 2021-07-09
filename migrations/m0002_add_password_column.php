@@ -1,7 +1,7 @@
 <?php
 
 
-class m0002_password_column{
+class m0002_add_password_column{
     public function up()
     {
         $db = \app\core\Application::$app->db;

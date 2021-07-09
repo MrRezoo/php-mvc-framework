@@ -6,7 +6,7 @@ namespace app\controllers;
 
 use app\core\Controller;
 use app\core\Request;
-use app\models\RegisterModel;
+use app\models\User;
 
 class AuthController extends Controller
 {
@@ -18,7 +18,7 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
-        $register_model = new RegisterModel();
+        $register_model = new User();
         if ($request->isPost()) {
             $register_model->loadData($request->getBody());
 

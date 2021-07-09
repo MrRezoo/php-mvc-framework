@@ -9,7 +9,7 @@ class m0001_initial {
             email VARCHAR (255) NOT NULL ,
             first_name VARCHAR (255) NOT NULL ,
             last_name VARCHAR (255) NOT NULL ,
-            status TINYINT NOT NULL ,
+            status BOOLEAN DEFAULT 0 ,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
         ) ENGINE=INNODB;";
        $db->pdo->exec($SQL);
