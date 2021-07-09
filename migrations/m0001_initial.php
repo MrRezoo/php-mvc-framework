@@ -1,18 +1,19 @@
 <?php
 
-class m0001_initial {
+class m0001_initial
+{
     public function up()
     {
-       $db = \app\core\Application::$app->db;
-       $SQL = " CREATE TABLE users (
+        $db = \app\core\Application::$app->db;
+        $SQL = " CREATE TABLE users (
             id INT AUTO_INCREMENT PRIMARY KEY ,
             email VARCHAR (255) NOT NULL ,
             first_name VARCHAR (255) NOT NULL ,
             last_name VARCHAR (255) NOT NULL ,
-            status BOOLEAN DEFAULT 0 ,
+            status TINYINT NOT NULL  ,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
         ) ENGINE=INNODB;";
-       $db->pdo->exec($SQL);
+        $db->pdo->exec($SQL);
 
     }
 
