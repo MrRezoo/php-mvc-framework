@@ -15,9 +15,13 @@ use mysql_xdevapi\SqlStatement;
  */
 class Application
 {
+    const EVENT_BEFORE_REQUEST = 'beforeRequest';
+    const EVENT_AFTER_REQUEST = 'afterRequest';
 
+    protected
+
+    public static Application $app;
     public static string $ROOT_DIR;
-
     public string $layout = 'main';
     public string $userClass;
     public Router $router;
@@ -27,8 +31,6 @@ class Application
     public Database $db;
     public ?UserModel $user;
     public View $view;
-
-    public static Application $app;
     public ?Controller $controller = null;
 
     public function __construct($routPath, array $config)

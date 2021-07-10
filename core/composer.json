@@ -1,0 +1,16 @@
+{
+    "name": "mr.rezoo/php-mvc-core",
+    "description": "sample core for php mvc framework",
+    "autoload": {
+        "psr-4": {
+            "MrRezoo\\PhpMvcCore\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mr.Rezoo",
+            "email": "rezam578@gmail.com"
+        }
+    ],
+    "require": {}
+}
