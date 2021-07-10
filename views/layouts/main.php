@@ -1,4 +1,5 @@
 <?php
+/** @var $this \app\core\View */
 
 use app\core\Application;
 
@@ -15,7 +16,7 @@ use app\core\Application;
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title><?php echo $this->title ?></title>
 </head>
 <style>
     body {
@@ -53,27 +54,27 @@ use app\core\Application;
                 <a class="nav-link" href="/contact">Contact</a>
             </li>
         </ul>
-        <?php if(Application::isGuest()): ?>
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/login">Login <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/register">Register</a>
-            </li>
-        </ul>
-        <?php else:?>
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/profile">Profile</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="/logout">Welcome <?php echo Application::$app->user->getDisplayName(); ?>
-                    (Logout)
-                </a>
-            </li>
-        </ul>
-        <?php endif;?>
+        <?php if (Application::isGuest()): ?>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/login">Login <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/register">Register</a>
+                </li>
+            </ul>
+        <?php else: ?>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/profile">Profile</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/logout">Welcome <?php echo Application::$app->user->getDisplayName(); ?>
+                        (Logout)
+                    </a>
+                </li>
+            </ul>
+        <?php endif; ?>
     </div>
 </nav>
 

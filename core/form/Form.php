@@ -6,6 +6,12 @@ namespace app\core\form;
 
 use app\core\Model;
 
+/**
+ * Class Form
+ *
+ * @author Mr.Rezoo <rezam578@gmail.com>
+ * @package app\core\form
+ */
 class Form
 {
     public static function begin($action, $method)
@@ -22,7 +28,7 @@ class Form
 
     public function field(Model $model, $attribute)
     {
-        return new Field($model, $attribute);
+        return new InputField($model, $attribute);
     }
 
 
