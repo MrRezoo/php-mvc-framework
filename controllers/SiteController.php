@@ -19,7 +19,7 @@ class SiteController extends Controller
     public function home()
     {
         $params = [
-            'name' => "welcome to our MVC site"
+            'name' => "Welcome to mvc site"
         ];
         return $this->render('home', $params);
     }

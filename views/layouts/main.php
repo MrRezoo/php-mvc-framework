@@ -21,6 +21,7 @@ use app\core\Application;
 <style>
     body {
         background-color: #dddddd;
+        background-image: url("https://raw.githubusercontent.com/MrRezoo/php-mvc-framework/master/PHP_mvc_framework.jpg");
         /*font-size: larger;*/
         /*font-family: "X Yekan", sans-serif*/
     }
