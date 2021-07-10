@@ -15,6 +15,7 @@ class Application
 
     public static string $ROOT_DIR;
 
+    public string $layout = 'main';
     public string $userClass;
     public Router $router;
     public Request $request;
@@ -25,7 +26,7 @@ class Application
 
 
     public static Application $app;
-    public Controller $controller;
+    public ?Controller $controller = null;
 
     public function __construct($routPath, array $config)
     {
@@ -42,11 +43,11 @@ class Application
 
         $primaryValue = $this->session->get('user');
         if ($primaryValue) {
-//            $primaryKey = $this->userClass::primaryKey();
-//            $this->user = $this->userClass::findOne([$primaryKey => $primaryValue]);
+//          $primaryKey = $this->userClass::primaryKey();
+//          $this->user = $this->userClass::findOne([$primaryKey => $primaryValue]);
             $primaryKey = (new $this->userClass)->primaryKey();
             $this->user = (new $this->userClass)->findOne([$primaryKey => $primaryValue]);
-        }else{
+        } else {
             $this->user = null;
         }
     }
@@ -58,7 +59,14 @@ class Application
 
     public function run()
     {
-        echo $this->router->resolve();
+        try {
+            echo $this->router->resolve();
+        } catch (\Exception $e) {
+            $this->response->setStatusCode($e->getCode());
+            echo $this->router->renderView('_error', [
+                'exception' => $e
+            ]);
+        }
     }
 
     /**
@@ -93,5 +101,6 @@ class Application
         $this->session->remove('user');
 
     }
+
 
 }
