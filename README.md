@@ -55,4 +55,4 @@ section
 
 ## License
 
-Distributed under the MIT License. See [license](LICENSE) for more information.
+Distributed under the GPL License. See [license](LICENSE) for more information.
