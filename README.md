@@ -36,16 +36,14 @@ section
 
 ## Setup
 
-* . . . . . . . . . . . . . . . . .
-
+* install third party packages
 ```shell
- do some thing
+ composer install
 ```
 
 ## Credits
 
-* [maryam]()
-* [rezoo]()
+* [thecodeholic](https://github.com/thecodeholic)
 
 ## Contributors
 
