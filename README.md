@@ -1,4 +1,4 @@
-# PHP MVC Framewok
+# PHP MVC Framework
 
 
 ![PHP](PHP_mvc_framework.jpg)
