@@ -3,7 +3,7 @@
 
 ![PHP](PHP_mvc_framework.jpg)
 
-Hello friends of this [Mr](https://www.linkedin.com/in/reza-mobaraki/) [Ms](https://www.linkedin.com/in/reza-mobara)
+Hello friends of these are [Mr REzoo](https://www.linkedin.com/in/reza-mobaraki/) [Miss mary](https://www.linkedin.com/in/maryam-ostovar-64b497210/)
 
 ## Table of contents
 
@@ -17,7 +17,8 @@ Hello friends of this [Mr](https://www.linkedin.com/in/reza-mobaraki/) [Ms](http
 
 ## General info
 
-Work on PHP MVC framework with PHP language . . .
+We started this project in 17th april
+
 
 ## Technologies
 
