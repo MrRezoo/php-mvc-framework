@@ -40,6 +40,16 @@ section
 ```shell
  composer install
 ```
+* build tables and run migrations 
+```shell
+ php migrations.php
+```
+---
+* if want to run project on LOCAL 
+```shell
+ do - php -S localhost:8080 -t public/
+```
+---
 
 ## Credits
 
