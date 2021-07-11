@@ -49,8 +49,9 @@ section
 
 ## Contributors
 
-* [MrRezoo](https://github.com/MrRezoo)
-* [maryam]()
+* [Mr.Rezoo](https://github.com/MrRezoo)
+* [Miss.maryam](https://github.com/maryost1998)
+* [Jalallinux](https://github.com/jalallinux)
 
 ## License
 
