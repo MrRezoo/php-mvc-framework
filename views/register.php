@@ -9,6 +9,10 @@ $this->title = 'Register';
 ?>
 
 <h1>Register Form</h1>
+<div align="right " >
+    <small><a href="/">back to home</a></small>
+</div>
+
 <hr>
 
 <?php
@@ -29,5 +33,8 @@ $form = \app\core\form\Form::begin('', "post") ?>
     <?php echo $form->field($model,'confirm_password')->passwordField() ?>
 
     <button type="submit" class="btn btn-primary">Sign up</button>
+    <lable> or
+         <a href="/login" class="btn btn-danger"> login</a>
+    </lable>
 
 <?php \app\core\form\Form::end() ?>
