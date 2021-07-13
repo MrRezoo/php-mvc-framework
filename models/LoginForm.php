@@ -44,7 +44,7 @@ class LoginForm extends Model
             return false;
         }
 
-
+        Application::$app->session->setFlash('success','You login successfully');
         return Application::$app->login($user);
     }
 

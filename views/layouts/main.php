@@ -54,6 +54,13 @@ use app\core\Application;
             <li class="nav-item">
                 <a class="nav-link" href="/contact">Contact</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/post">Post | Create</a>
+            </li>
+            <li>
+                <a class="nav-link" href="/getpost?id=">Post | Get</a>
+            </li>
+
         </ul>
         <?php if (Application::isGuest()): ?>
             <ul class="navbar-nav ml-auto">
@@ -84,6 +91,11 @@ use app\core\Application;
     <?php if (Application::$app->session->getFlash('success')): ?>
         <div class="alert alert-success">
             <?php echo Application::$app->session->getFlash('success'); ?>
+        </div>
+    <?php endif; ?>
+    <?php if (Application::$app->session->getFlash('error')): ?>
+        <div class="alert alert-danger">
+            <?php echo Application::$app->session->getFlash('error'); ?>
         </div>
     <?php endif; ?>
     {{content}}

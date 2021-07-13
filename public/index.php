@@ -5,6 +5,7 @@ use app\controllers\AuthController;
 use app\controllers\SiteController;
 use app\core\Application;
 use app\core\Router;
+use app\controllers\PostController;;
 
 
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -30,6 +31,12 @@ $app = new Application(dirname(__DIR__), $config);
 $app->router->get('/', [SiteController::class, 'home']);
 $app->router->get('/contact', [SiteController::class, 'contact']);
 $app->router->post('/contact', [SiteController::class, 'contact']);
+
+$app->router->get('/post', [PostController::class, 'create']);
+$app->router->post('/post', [PostController::class, 'create']);
+
+$app->router->get('/getpost', [PostController::class, 'getpost']);
+
 
 $app->router->get('/login', [AuthController::class, 'login']);
 $app->router->post('/login', [AuthController::class, 'login']);

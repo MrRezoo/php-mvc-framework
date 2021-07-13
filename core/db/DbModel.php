@@ -30,6 +30,7 @@ abstract class DbModel extends Model
         }
 
         $statement->execute();
+        var_dump($statement);
         return true;
     }
 

@@ -121,5 +121,13 @@ class Application
         $this->eventListeners[$eventName][] = $callback;
     }
 
+    /**
+     * DEBUG Tools
+     * @param ...$data
+     */
+    public function dd(...$data) {
+        echo '<pre style="background-color: black; color: #60fa00; padding: 5px;">' . var_export($data, true) . '</pre>';
+        exit;
+    }
 
 }
