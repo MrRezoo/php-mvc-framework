@@ -17,7 +17,15 @@ Hello friends of these are [Mr.Rezoo](https://www.linkedin.com/in/reza-mobaraki/
 
 ## General info
 
-We started this project in 17th april
+We started the project on April 17th, In order to find a new path for how to code pure.
+
+If today it is very easy to build a platform with advanced frameworks, but unfortunately we do not know the story behind it.
+
+Now that we have this opportunity, we have implemented all the basic concepts including web development protocols, framework development structure and design templates to implement the best practice with PHP.
+
+Items that have been considered in this project:
+
+
 
 
 ## Technologies
