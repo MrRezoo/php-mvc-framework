@@ -60,6 +60,9 @@ use app\core\Application;
             <li>
                 <a class="nav-link" href="/getpost?id=">Post | Get</a>
             </li>
+            <li>
+                <a class="nav-link" href="/getpost?id=">Post | All</a>
+            </li>
 
         </ul>
         <?php if (Application::isGuest()): ?>
