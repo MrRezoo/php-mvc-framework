@@ -61,7 +61,7 @@ use app\core\Application;
                 <a class="nav-link" href="/getpost?id=">Post | Get</a>
             </li>
             <li>
-                <a class="nav-link" href="/getpost?id=">Post | All</a>
+                <a class="nav-link" href="/allpost?subject">Post | All</a>
             </li>
 
         </ul>
