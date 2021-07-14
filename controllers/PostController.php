@@ -39,7 +39,7 @@ class PostController extends Controller
     }
 
 
-    public function getpost(Request $request, Response $response)
+    public function getPost(Request $request, Response $response)
     {
 
         if (key_exists('id', $_GET)) {
@@ -54,6 +54,43 @@ class PostController extends Controller
             }
         }
         Application::$app->session->setFlash('error', 'ID is required');
+        return $response->redirect('/');
+    }
+
+    public function allPost(Request $request, Response $response)
+    {
+
+        if (key_exists('subject', $_GET) || key_exists('slug', $_GET) || key_exists('title', $_GET) || key_exists('description', $_GET)) {
+            if ($request->isGet()) {
+                if (key_exists('subject', $_GET)) {
+
+                    $value = '%' . $_GET['subject'] . '%';
+                    $post = (new \app\models\Post)->findAll(['subject' => $value]);
+                    Application::$app->dd($post);
+                }
+                if (key_exists('slug', $_GET)) {
+                    $value = '%' . $_GET['slug'] . '%';
+                    $post = (new \app\models\Post)->findAll(['slug' =>$value]);
+                    Application::$app->dd($post);
+                }
+                if (key_exists('title', $_GET)) {
+                    $value = '%' . $_GET['title'] . '%';
+
+                    $post = (new \app\models\Post)->findAll(['title' =>$value]);
+                    Application::$app->dd($post);
+                }
+                if (key_exists('description', $_GET)) {
+                    $value = '%' . $_GET['description'] . '%';
+                    $post = (new \app\models\Post)->findAll(['description' => $value]);
+                    Application::$app->dd($post);
+                }
+
+            } else {
+                Application::$app->session->setFlash('error', 'Bad Request');
+                return $response->redirect('/');
+            }
+        }
+        Application::$app->session->setFlash('error', 'One Column for search is required');
         return $response->redirect('/');
     }
 

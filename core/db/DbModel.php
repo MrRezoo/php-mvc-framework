@@ -6,6 +6,7 @@ namespace app\core\db;
 
 use app\core\Application;
 use app\core\Model;
+use PDO;
 
 abstract class DbModel extends Model
 {
@@ -34,6 +35,27 @@ abstract class DbModel extends Model
         return true;
     }
 
+    public function update()
+    {
+        $tableName = $this->tableName();
+        $attributes = $this->attributes();
+        $primaryKey = $this->primaryKey();
+
+        $params = array_map(fn($attr) => ":$attr", $attributes);
+        $primary = array_map(fn($id) => ":$id", $primaryKey);
+        $statement = self::prepare(" UPDATE $tableName SET  (" . implode(',', $attributes) . ") 
+                                        VALUES (" . implode(',', $params) . ") WHERE $primaryKey = $primary");
+
+        foreach ($attributes as $attribute) {
+            $statement->bindValue(":$attribute", $this->{$attribute});
+            $statement->bindValue(":$primaryKey", $this->{$primaryKey});
+
+        }
+
+        $statement->execute();
+        return true;
+    }
+
     public function findOne($where) //[email => ms.mr@example.com, firstname => reza]
     {
         $tableName = static::tableName();
@@ -46,6 +68,22 @@ abstract class DbModel extends Model
         }
         $statement->execute();
         return $statement->fetchObject(static::class);
+
+    }
+
+    public function findAll($where) //[email => ms.mr@example.com, firstname => reza]
+    {
+        $tableName = static::tableName();
+        $attributes = array_keys($where);
+        $sql = implode("AND ", array_map(fn($attr) => "$attr Like :$attr", $attributes));
+        // SELECT * FROM $tableName WHERE email = :email AND firstname = :firstname
+        // SELECT * FROM $tableName WHERE email Like :email AND firstname = :firstname
+        $statement = self::prepare("SELECT * FROM $tableName WHERE $sql");
+        foreach ($where as $key => $item) {
+            $statement->bindValue(":$key", $item);
+        }
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_OBJ);
 
     }
 

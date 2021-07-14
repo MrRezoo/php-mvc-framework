@@ -7,7 +7,6 @@ use app\core\Controller;
 use app\core\Request;
 use app\core\Response;
 use app\models\ContactForm;
-use app\models\GetPostForm;
 use app\models\Post;
 
 /**

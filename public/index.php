@@ -35,7 +35,8 @@ $app->router->post('/contact', [SiteController::class, 'contact']);
 $app->router->get('/post', [PostController::class, 'create']);
 $app->router->post('/post', [PostController::class, 'create']);
 
-$app->router->get('/getpost', [PostController::class, 'getpost']);
+$app->router->get('/getpost', [PostController::class, 'getPost']);
+$app->router->get('/allpost', [PostController::class, 'allPost']);
 
 
 $app->router->get('/login', [AuthController::class, 'login']);
