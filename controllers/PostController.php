@@ -62,27 +62,14 @@ class PostController extends Controller
 
         if (key_exists('subject', $_GET) || key_exists('slug', $_GET) || key_exists('title', $_GET) || key_exists('description', $_GET)) {
             if ($request->isGet()) {
-                if (key_exists('subject', $_GET)) {
+                $keys = ['subject','slug','title','description'];
+                foreach ($keys as $key){
+                    if (key_exists($key, $_GET)) {
 
-                    $value = '%' . $_GET['subject'] . '%';
-                    $post = (new \app\models\Post)->findAll(['subject' => $value]);
-                    Application::$app->dd($post);
-                }
-                if (key_exists('slug', $_GET)) {
-                    $value = '%' . $_GET['slug'] . '%';
-                    $post = (new \app\models\Post)->findAll(['slug' =>$value]);
-                    Application::$app->dd($post);
-                }
-                if (key_exists('title', $_GET)) {
-                    $value = '%' . $_GET['title'] . '%';
-
-                    $post = (new \app\models\Post)->findAll(['title' =>$value]);
-                    Application::$app->dd($post);
-                }
-                if (key_exists('description', $_GET)) {
-                    $value = '%' . $_GET['description'] . '%';
-                    $post = (new \app\models\Post)->findAll(['description' => $value]);
-                    Application::$app->dd($post);
+                        $value = '%' . $_GET[$key] . '%';
+                        $post = (new \app\models\Post)->findAll([$key => $value]);
+                        Application::$app->dd($post);
+                    }
                 }
 
             } else {
