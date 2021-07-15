@@ -71,7 +71,17 @@ abstract class DbModel extends Model
 
     }
 
-    public function findAll($where) //[email => ms.mr@example.com, firstname => reza]
+    public function findAll() //[email => ms.mr@example.com, firstname => reza]
+    {
+        $tableName = static::tableName();
+
+        $statement = self::prepare("SELECT * FROM $tableName");
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_OBJ);
+
+    }
+
+    public function search($where) //[email => ms.mr@example.com, firstname => reza]
     {
         $tableName = static::tableName();
         $attributes = array_keys($where);

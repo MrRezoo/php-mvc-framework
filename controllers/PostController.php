@@ -60,14 +60,30 @@ class PostController extends Controller
     public function allPost(Request $request, Response $response)
     {
 
+        if ($request->isGet()) {
+
+            $post = (new \app\models\Post)->findAll();
+            Application::$app->dd($post);
+
+        } else {
+
+            Application::$app->session->setFlash('error', 'Bad Request');
+            return $response->redirect('/');
+
+        }
+    }
+
+    public function search(Request $request, Response $response)
+    {
+
         if (key_exists('subject', $_GET) || key_exists('slug', $_GET) || key_exists('title', $_GET) || key_exists('description', $_GET)) {
             if ($request->isGet()) {
-                $keys = ['subject','slug','title','description'];
-                foreach ($keys as $key){
+                $keys = ['subject', 'slug', 'title', 'description'];
+                foreach ($keys as $key) {
                     if (key_exists($key, $_GET)) {
 
                         $value = '%' . $_GET[$key] . '%';
-                        $post = (new \app\models\Post)->findAll([$key => $value]);
+                        $post = (new \app\models\Post)->search([$key => $value]);
                         Application::$app->dd($post);
                     }
                 }
@@ -80,5 +96,4 @@ class PostController extends Controller
         Application::$app->session->setFlash('error', 'One Column for search is required');
         return $response->redirect('/');
     }
-
 }
