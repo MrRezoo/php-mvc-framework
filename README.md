@@ -62,11 +62,16 @@ section
 
 ## Setup
 
+* initial composer if not exists
+```shell
+ composer init
+```
+
 * install third party packages
 ```shell
  composer install
 ```
-* build tables and run migrations 
+* build tables and run migrations | build tables
 ```shell
  php migrations.php
 ```
