@@ -5,6 +5,16 @@
 
 Hello friends of these are [Mr.Rezoo](https://www.linkedin.com/in/reza-mobaraki/) | [Miss.mary](https://www.linkedin.com/in/maryam-ostovar-64b497210/)
 
+---
+
+Home           |  Login
+:-------------------------:|:-------------------------:
+![](zrpics/home.png)  |  ![](zrpics/login.png)
+register           |  Login
+![](zrpics/register.png) | ![](zrpics/403.png)
+![](zrpics/404.png) | ![](zrpics/all.png)
+![](zrpics/detail.png) |![](zrpics/contact.png)
+
 ## Table of contents
 
 * [General info](#General-info)
