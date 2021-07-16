@@ -24,6 +24,13 @@ If today it is very easy to build a platform with advanced frameworks, but unfor
 Now that we have this opportunity, we have implemented all the basic concepts including web development protocols, framework development structure and design templates to implement the best practice with PHP.
 
 Items that have been considered in this project:
+- Use design pattern >> ex:singleton(abstract)
+- protocol web >> exception handling
+- section handling >> ex:flash session
+- query handling >> orm(find_one)
+- Routing for url
+- template engine >> for handler >> input handler
+- onion middlewares >> isguest
 
 
 
