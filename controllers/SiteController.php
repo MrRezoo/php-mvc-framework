@@ -22,6 +22,7 @@ class SiteController extends Controller
 
         $params = [
             'name' => "Welcome to mvc site",
+            'address' => "https://github.com/MrRezoo/php-mvc-framework",
             'all_post'=> 'The section for getting all posts is not complete',
             'one_post' => 'but you can send ID in query string in /getpost route and use FindOne | ORM :)'
         ];
