@@ -36,7 +36,8 @@ $app->router->get('/post', [PostController::class, 'create']);
 $app->router->post('/post', [PostController::class, 'create']);
 
 $app->router->get('/getpost', [PostController::class, 'getPost']);
-$app->router->get('/allpost', [PostController::class, 'allPost']);
+$app->router->get('/post-detail', [PostController::class, 'post_detail']);
+$app->router->get('/posts', [PostController::class, 'allPost']);
 $app->router->get('/search', [PostController::class, 'search']);
 
 

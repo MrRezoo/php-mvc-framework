@@ -76,4 +76,9 @@ class Post extends PostModel
         ];
     }
 
+
+    public function get_absolut_url(){
+
+    }
+
 }

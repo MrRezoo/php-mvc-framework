@@ -62,7 +62,7 @@ use app\core\Application;
                     <li><a class="dropdown-item" href="/post">Create</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="/getpost?id=">Get</a></li>
-                    <li><a class="dropdown-item" href="/allpost">All</a></li>
+                    <li><a class="dropdown-item" href="/posts">All</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="/search?title">search</a></li>
                 </ul>

@@ -1,7 +1,7 @@
 # PHP MVC Framework
 
 
-![PHP](PHP_mvc_framework.jpg)
+![PHP](default-pic.jpg)
 
 Hello friends of these are [Mr.Rezoo](https://www.linkedin.com/in/reza-mobaraki/) | [Miss.mary](https://www.linkedin.com/in/maryam-ostovar-64b497210/)
 

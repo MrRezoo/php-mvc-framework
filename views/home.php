@@ -10,8 +10,12 @@ $this->title = 'Home';
 
 <h3> <?php echo $name ?> </h3>
 
-<p>
+<strike style="color: red">
     <?php echo $all_post ?>
+</strike>
+<br>
+<p>
+    detail and all post fixed and created
 </p>
 
 <small>

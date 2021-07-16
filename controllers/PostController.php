@@ -61,16 +61,38 @@ class PostController extends Controller
     {
 
         if ($request->isGet()) {
-
-            $post = (new \app\models\Post)->findAll();
-            Application::$app->dd($post);
+            $posts = (new \app\models\Post)->findAll();
+            return $this->render('posts', [
+                'posts' => $posts
+            ]);
 
         } else {
 
-            Application::$app->session->setFlash('error', 'Bad Request');
+            Application::$app->session->setFlash('error', '400 | Bad Request');
             return $response->redirect('/');
 
         }
+    }
+
+    public function post_detail(Request $request, Response $response)
+    {
+        if (key_exists('id', $_GET) && isset($_GET['id']) ) {
+
+            if ($request->isGet()) {
+
+                $post = (new \app\models\Post)->findOne(['id' => $_GET['id']]);
+                if ($post) {
+                    return $this->render('post_detail', [
+                        'post' => $post
+                    ]);
+                } else {
+                    Application::$app->session->setFlash('error', 'post not found');
+                    return $response->redirect('/');
+                }
+            }
+        }
+        Application::$app->session->setFlash('error', '404 primary key is required');
+        return $response->redirect('/');
     }
 
     public function search(Request $request, Response $response)
