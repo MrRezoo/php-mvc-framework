@@ -7,13 +7,11 @@ Hello friends of these are [Mr.Rezoo](https://www.linkedin.com/in/reza-mobaraki/
 
 ---
 
-Home           |  Login
-:-------------------------:|:-------------------------:
-![](zrpics/home.png)  |  ![](zrpics/login.png)
-register           |  Login
-![](zrpics/register.png) | ![](zrpics/403.png)
-![](zrpics/404.png) | ![](zrpics/all.png)
-![](zrpics/detail.png) |![](zrpics/contact.png)
+Home                       |             Login          |           register       |            403           |
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![](zrpics/home.png)  |  ![](zrpics/login.png) | ![](zrpics/register.png) |  ![](zrpics/403.png)
+404                       |             all             |          detail          |         contact         |
+![](zrpics/404.png) | ![](zrpics/all.png) | ![](zrpics/detail.png) |![](zrpics/contact.png)
 
 ## Table of contents
 
