@@ -8,7 +8,8 @@ $this->title = 'Home';
 
 <h1>Home</h1>
 
-<h3> <?php echo $name ?> </h3> <a href="https://github.com/MrRezoo/php-mvc-framework"><small> Github Address</small></a>
+<h3> <?php echo $name ?> : <a href="https://github.com/MrRezoo/php-mvc-framework"><small>Github Address</small></a></h3>
+
 
 <strike style="color: red">
     <?php echo $all_post ?>
