@@ -9,9 +9,12 @@ Hello friends of these are [Mr.Rezoo](https://www.linkedin.com/in/reza-mobaraki/
 
 Home                       |             Login          |           register       |            403           |
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-![](zrpics/home.png)  |  ![](zrpics/login.png) | ![](zrpics/register.png) |  ![](zrpics/403.png)
+![](zz/home.png)  |  ![](zz/login.png) | ![](zz/register.png) |  ![](zz/403.png)
 404                       |             all             |          detail          |         contact         |
-![](zrpics/404.png) | ![](zrpics/all.png) | ![](zrpics/detail.png) |![](zrpics/contact.png)
+![](zz/404.png) | ![](zz/all.png) | ![](zz/detail.png) |![](zz/contact.png)
+|         search         |
+![](zz/search.png) |
+
 
 ## Table of contents
 
