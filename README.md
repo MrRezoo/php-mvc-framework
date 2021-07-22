@@ -38,10 +38,11 @@ Items that have been considered in this project:
 - Use design pattern >> ex:singleton(abstract)
 - protocol web >> exception handling
 - section handling >> ex:flash session
-- query handling >> orm(find_one)
+- query handling >> orm(find_one, find_all, search, save, . . . ) 
 - Routing for url
 - template engine >> for handler >> input handler
 - onion middlewares >> isguest
+
 
 
 
